@@ -5,39 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./reset.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   <title>Interactive pricing component</title>
-
-  
 </head>
 <body>
   <h1>
     Simple, traffic-based pricing
   </h1>
   <p>
-    Sign-up for our 30-day trial. No credit card required.
+    Sign-up for our 30-day trial. <br> No credit card required.
   </p>
-  <div>
+  <div class="main-container">
     <form action="">
       <div>
-        <output></output><span>Pageviews</span>
+        <output class="pageviews"></output><span class="pageviews">Pageviews</span>
       </div>
       <input type="range">
-      <div>
-        <span>$ </span><output></output><span>/month</span>
+      <div class="price-container">
+        <span class="price">$ </span><output class="price"></output><span class="month">/month</span>
       </div>
       <div>
-        <span>Monthly Billing</span>
+        <span class="general-text">Monthly Billing</span>
         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
-        <span>Yearly Billing</span><output>25%</output><span>discount</span>
+        <span class="general-text">Yearly Billing</span><output>25%</output><span class="discount">discount</span>
       </div>
     </form>
-    <div>""</div>
+    <div></div>
     <div>
-      <ul>
+      <ul class="general-text">
         <li>Unlimited websites</li>
         <li>100% data ownership</li>
         <li>Email reports</li>
