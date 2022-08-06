@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous"/>
   <title>Interactive pricing component</title>
 </head>
 <body>
@@ -19,27 +20,27 @@
   <div class="main-container">
     <form action="">
       <div>
-        <output class="pageviews"></output><span class="pageviews">Pageviews</span>
+        <output class="pageviews" name="x" for="a">100</output><span class="pageviews">K Pageviews</span>
       </div>
-      <input type="range">
+      <input type="range" class="viewer-slider" name="a" value="50">
       <div class="price-container">
         <span class="price">$ </span><output class="price"></output><span class="month">/month</span>
       </div>
-      <div>
+      <div class="discount-container">
         <span class="general-text">Monthly Billing</span>
         <label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
         </label>
-        <span class="general-text">Yearly Billing</span><output>25%</output><span class="discount">discount</span>
+        <span class="general-text">Yearly Billing</span><span class="discount">25%</span><span class="discount-text">discount</span>
       </div>
     </form>
-    <div></div>
+    <div class="line"></div>
     <div>
       <ul class="general-text">
-        <li>Unlimited websites</li>
-        <li>100% data ownership</li>
-        <li>Email reports</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> Unlimited websites</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> 100% data ownership</li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> Email reports</li>
       </ul>
     </div>
     <button type="button">Start my trial</button>
