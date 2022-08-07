@@ -20,19 +20,19 @@
   <div class="main-container">
     <form action="">
       <div>
-        <output class="pageviews" name="x" for="a">100</output><span class="pageviews">K Pageviews</span>
+        <output id="pageviews" class="pageviews" name="x" for="a">100K</output><span class="pageviews"> Pageviews</span>
       </div>
       <input id="myinput" type="range" step="1"  min="1" max="5" value="3">
       <div class="price-container">
-        <span class="price">$</span><output class="price">16.00</output><span class="month"> /month</span>
+        <span class="price">$</span><output id="price" class="price">16.00</output><span class="month"> /month</span>
       </div>
       <div class="discount-container">
         <span class="general-text">Monthly Billing</span>
         <label class="switch">
-          <input type="checkbox">
+          <input id="discount" type="checkbox" active="false">
           <span class="slider round"></span>
         </label>
-        <span class="general-text">Yearly Billing</span><span class="discount">25%</span><span class="discount-text">discount</span>
+        <span class="general-text">Yearly Billing</span><span class="discount">25%</span><span class="discount-text">25% discount</span>
       </div>
     </form>
     <div class="line"></div>
@@ -48,12 +48,65 @@
 </body>
 
 <script>
-document.getElementById("myinput").oninput = function() {
-  var value = (this.value-this.min)/(this.max-this.min)*100
-  console.log(this.value)
-  console.log(value);
+let checked;
+
+const myInput = document.getElementById("myinput").oninput = function() {
+  const value = (this.value-this.min)/(this.max-this.min)*100
+  const pagevies = document.getElementById("pageviews");
+  const price = document.getElementById("price");
   this.style.background = 'linear-gradient(to right, #A4F3EB 0%, #A4F3EB ' + value + '%, #ECF0FB ' + value + '%, #ECF0FB 100%)'
+  if (value == 0) {
+    pagevies.value = "10K";
+    if (checked == "false"){
+      price.value = `${8*0.75}.00`
+    } else {
+      price.value = "8.00"
+    }
+  }
+  if (value == 25) {
+    pagevies.value = "50K";
+    if (checked == "false"){
+      price.value = `${12*0.75}.00`
+    }else{
+      price.value = "12.00";
+    }
+  }
+  if (value == 50) {
+    pagevies.value = "100K";
+    if (checked == "false"){
+      price.value = `${16*0.75}.00`
+    }else{
+      price.value = "16.00";
+    }
+  }
+  if (value == 75) {
+    pagevies.value = "500K";
+    if (checked == "false"){
+      price.value = `${24*0.75}.00`
+    }else{
+      price.value = "24.00";
+    }
+  }
+  if (value == 100) {
+    pagevies.value = "1M";
+    if (checked == "false"){
+      price.value = `${36*0.75}.00`
+    }else{
+      price.value = "36.00";
+    }
+  }
 };
+
+const discount = document.getElementById("discount").addEventListener("click",()=>{
+  checked = event.target.getAttribute("active");
+  if (checked == "false") {
+    event.target.setAttribute("active", "true");
+  } else {
+    event.target.setAttribute("active", "false");
+  }
+});
+
+
 </script>
 
 </html>

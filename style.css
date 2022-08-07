@@ -29,30 +29,6 @@ p {
     margin-bottom: 20px;
 }
 
-#myinput {
-    width: 85.84%;
-    height: 8px;
-    border-radius: 5px;
-    align-self: center;
-    background: linear-gradient(to right, #A4F3EB 0%, #A4F3EB 50%, #ECF0FB 50%, #ECF0FB 100%);
-    outline: none;
-    transition: background 450ms ease-in;
-    -webkit-appearance: none;
-    margin: 31px 0 30px 0;
-}
-
-input[type='range']::-webkit-slider-thumb {
-    width: 40px;
-    height: 40px;
-    -webkit-appearance: none;
-    background-color: hsla(174, 86%, 45%, 1);
-    border-radius: 50%;
-    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
-    background-image: url("./images/icon-slider.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -63,6 +39,7 @@ input[type='range']::-webkit-slider-thumb {
     background-color: white;
     width: 87.2%;
     max-width: 540px;
+    min-width: 325px;
 }
 
 form {
@@ -96,6 +73,30 @@ div {
     text-align: right;
     letter-spacing: -0.8px;
     color: hsla(226, 36%, 25%, 1);
+}
+
+#myinput {
+    width: 85.84%;
+    height: 8px;
+    border-radius: 5px;
+    align-self: center;
+    background: linear-gradient(to right, #A4F3EB 0%, #A4F3EB 50%, #ECF0FB 50%, #ECF0FB 100%);
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+    margin: 31px 0 30px 0;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 40px;
+    height: 40px;
+    -webkit-appearance: none;
+    background-color: hsla(174, 86%, 45%, 1);
+    border-radius: 50%;
+    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+    background-image: url("./images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .month {
@@ -137,6 +138,15 @@ div {
 
 .discount-text {
     display: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: hsla(15, 100%, 70%, 1);
+    padding: 4px 12px;
+    border-radius: 9.5px;
+    background-color: hsla(15, 90%, 95%, 1);
 }
 
 .line {
@@ -165,13 +175,13 @@ i {
     margin-right: 10px;
   }
   
-  .switch input { 
+.switch input { 
     opacity: 0;
     width: 0;
     height: 0;
-  }
+}
   
-  .slider {
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -183,7 +193,7 @@ i {
     transition: .4s;
   }
   
-  .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 14px;
@@ -193,24 +203,24 @@ i {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
   
-  input:checked + .slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
-  }
+}
   
   /* Rounded sliders */
-  .slider.round {
+.slider.round {
     border-radius: 15px;
-  }
+}
   
-  .slider.round:before {
+.slider.round:before {
     border-radius: 50%;
-  }
+}
 
-  button {
+button {
     all: unset;
     width: 170px;
     height: 41px;
@@ -223,5 +233,55 @@ i {
     text-align: center;
     color: hsla(226, 100%, 87%, 1);
     margin-bottom: 32px;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+    background-color: hsla(174, 73%, 70%, 1);
+    cursor: pointer;
+}
+
+.slider:hover {
+    background-color: hsla(174, 73%, 70%, 1);
+}
+
+button:hover {
+    background-color: hsla(227, 35%, 25%, 1);
+    color: hsla(0, 0%, 100%, 1);
+    cursor: pointer;
+}
+
+  @media only screen and (min-width: 600px) {
+    .main-container {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: unset;
+    }
+
+    form {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: unset;
+    }
+    
+    #myinput {
+        order: 3;
+    }
+
+    .price-container{
+        order: 2;
+    }
+
+    .discount-container {
+        order: 4;
+    }
+
+    .discount {
+        display: none;
+    }
+
+    .discount-text{
+        display: inline;
+    }
   }
 
