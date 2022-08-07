@@ -22,9 +22,16 @@
       <div>
         <output class="pageviews" name="x" for="a">100</output><span class="pageviews">K Pageviews</span>
       </div>
-      <input type="range" class="viewer-slider" name="a" value="50">
+      <input id="myinput" type="range" step="1" list="data" min="1" max="5" value="3">
+      <datalist id="data">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </datalist>
       <div class="price-container">
-        <span class="price">$ </span><output class="price"></output><span class="month">/month</span>
+        <span class="price">$</span><output class="price">16.00</output><span class="month"> /month</span>
       </div>
       <div class="discount-container">
         <span class="general-text">Monthly Billing</span>
@@ -46,4 +53,12 @@
     <button type="button">Start my trial</button>
   </div>
 </body>
+
+<script>
+document.getElementById("myinput").oninput = function() {
+  var value = (this.value-this.min)/(this.max-this.min)*100
+  this.style.background = 'linear-gradient(to right, #A4F3EB 0%, #A4F3EB ' + value + '%, #ECF0FB ' + value + '%, #ECF0FB 100%)'
+};
+</script>
+
 </html>

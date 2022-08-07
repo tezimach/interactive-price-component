@@ -29,10 +29,29 @@ p {
     margin-bottom: 20px;
 }
 
-.viewer-slider {
-    width: 85.32%;
+#myinput {
+    width: 85.84%;
+    height: 8px;
+    border-radius: 5px;
     align-self: center;
+    background: linear-gradient(to right, #A4F3EB 0%, #A4F3EB 50%, #ECF0FB 50%, #ECF0FB 100%);
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+    margin: 31px 0 30px 0;
 }
+
+input[type='range']::-webkit-slider-thumb {
+    width: 40px;
+    height: 40px;
+    -webkit-appearance: none;
+    background-color: hsla(174, 86%, 45%, 1);
+    border-radius: 50%;
+    box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+    background-image: url("./images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
 .main-container {
     display: flex;
